@@ -1,4 +1,4 @@
-# darija-nlp-resources
+# AI + NLP · darija-nlp-resources
 
 > Curated list of public corpora, papers, tools, and benchmarks for Moroccan Arabic (Darija) NLP — the operating language behind [jak.ma](https://jak.ma).
 
