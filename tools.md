@@ -91,7 +91,7 @@ Example structure:
 - **Install:** `pip install transformers peft accelerate datasets`
 - **Docs:** https://huggingface.co/docs/peft/
 - **Use for:** Adapting a base model (Llama 3.1 8B, Qwen 2.5 7B, Mistral Nemo) to Darija without full fine-tuning.
-- **Recipe:** See [jak-ma-eval-suite/scripts/finetune/lora_train.py](https://github.com/Samielakkad/jak-ma-eval-suite) for a working template (target: Llama 3.1 8B, rank 16, alpha 32).
+- **Recipe:** See [jak-ma-eval-suite/scripts/finetune/lora_train.py](https://github.com/Samielakkad/ai-llm-evaluation-jakma) for a working template (target: Llama 3.1 8B, rank 16, alpha 32).
 - **Compute cost:** ~6 hours on a single A100, ~$20–50 on Modal/RunPod/Vast.ai.
 
 ---
@@ -132,7 +132,7 @@ Example structure:
 ### jak-ma-eval-suite scripts/run_eval.py
 
 - **What:** Run the 5-dim eval rubric against any OpenAI-compatible chat endpoint.
-- **Install:** Clone https://github.com/Samielakkad/jak-ma-eval-suite + `pip install httpx tqdm`
+- **Install:** Clone https://github.com/Samielakkad/ai-llm-evaluation-jakma + `pip install httpx tqdm`
 - **Use for:** Release-gating your Darija model. Get a JSON summary of factuality, naturalness, trade-fit, price-fairness, geographic.
 - **Output:** `results.json` with per-dimension scores and aggregate.
 
@@ -152,7 +152,7 @@ Example structure:
 
 - **What:** Document database for workers, eval_logs, and price_cache.
 - **Use for:** Structured retrieval (the Pass 1 → retrieve step in jak.ma).
-- **Index recipe (jak.ma):** `(category, city, approved, available)`, `(category, featured, verified, rating)`. See [jak-ma-eval-suite/VERIFIER_SPEC.md](https://github.com/Samielakkad/jak-ma-eval-suite).
+- **Index recipe (jak.ma):** `(category, city, approved, available)`, `(category, featured, verified, rating)`. See [jak-ma-eval-suite/VERIFIER_SPEC.md](https://github.com/Samielakkad/ai-llm-evaluation-jakma).
 - **Cost:** M0 tier free up to 512 MB. M2 tier $9/mo. M5 tier $25/mo.
 
 ---
@@ -204,9 +204,9 @@ If you have 2 weeks to ship a Darija production system:
 1. **Inference:** xAI Grok-3-mini (or Anthropic Claude Sonnet for non-Chinese-region deployments)
 2. **Tokenization:** Custom SentencePiece BPE trained on your domain corpus + a small rule-based Arabizi normalizer
 3. **Retrieval:** MongoDB Atlas with composite indexes
-4. **Eval:** [jak-ma-eval-suite/scripts/run_eval.py](https://github.com/Samielakkad/jak-ma-eval-suite) against a domain-specific test set you build
+4. **Eval:** [jak-ma-eval-suite/scripts/run_eval.py](https://github.com/Samielakkad/ai-llm-evaluation-jakma) against a domain-specific test set you build
 5. **Hosting:** Vercel serverless (you'll outgrow it at ~200k queries/month, but it's free at the start)
-6. **Verifier:** Deterministic rules in code, no LLM call inside the verifier (see [jak-ma-eval-suite/VERIFIER_SPEC.md](https://github.com/Samielakkad/jak-ma-eval-suite/blob/main/VERIFIER_SPEC.md))
+6. **Verifier:** Deterministic rules in code, no LLM call inside the verifier (see [jak-ma-eval-suite/VERIFIER_SPEC.md](https://github.com/Samielakkad/ai-llm-evaluation-jakma/blob/main/VERIFIER_SPEC.md))
 
 If you have 2 months and a $500 compute budget:
 

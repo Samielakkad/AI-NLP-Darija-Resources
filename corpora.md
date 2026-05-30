@@ -90,7 +90,7 @@ Sort: by directness to Darija production work.
 - **Contents:** ~2,200 PII-scrubbed Darija chat samples from jak.ma production traffic.
 - **Size:** Growing. Target: 5,000–15,000 samples by end of 2026.
 - **License:** Internal. Public release planned for v2 once PII pipeline is audited.
-- **Where:** Not yet public. Sample format mirrored at: [jak-ma-eval-suite/data/sample_queries.jsonl](https://github.com/Samielakkad/jak-ma-eval-suite/blob/main/data/sample_queries.jsonl).
+- **Where:** Not yet public. Sample format mirrored at: [jak-ma-eval-suite/data/sample_queries.jsonl](https://github.com/Samielakkad/ai-llm-evaluation-jakma/blob/main/data/sample_queries.jsonl).
 - **Use for:** Production-realistic Darija chat — the kind of register that DOES include code-switching, Arabizi, abbreviations, etc.
 
 ---
@@ -121,7 +121,7 @@ If you're starting a Darija NLP project in 2026, here's the gap that will hurt y
 
 1. **High-quality Arabizi parallel data.** No standardized Moroccan Arabizi-to-Arabic parallel corpus exists at scale. You'll need to build your own.
 2. **Trade-specific or domain-specific vocabularies.** General Darija corpora won't have بلومبي (plumber), كلامبيستري (tiler), حدادة (welder) in useful frequencies. Build your own domain lexicon.
-3. **Calibrated evaluators.** Most public Darija evaluation is one-shot human rating with no calibration protocol. The methodology in [ernie-evaluation-notes/calibration_practice.md](https://github.com/Samielakkad/ernie-evaluation-notes/blob/main/calibration_practice.md) is what closes this gap.
+3. **Calibrated evaluators.** Most public Darija evaluation is one-shot human rating with no calibration protocol. The methodology in [ernie-evaluation-notes/calibration_practice.md](https://github.com/Samielakkad/ai-llm-evaluation-baidu-ernie/blob/main/calibration_practice.md) is what closes this gap.
 4. **Pricing / numeric reasoning in Darija.** Almost zero public data. Sami's deterministic rule engine in jak.ma is one of the few production-validated solutions.
 5. **Production-realistic chat register.** Most corpora are formal/literary. Chat Darija is shorter, code-switched, with abbreviations. Production logs (PII-scrubbed) are the only good source.
 
@@ -136,7 +136,7 @@ If you have no prior data and need to start:
 3. **Add DODa** as a lookup table for word-level normalization.
 4. **Use back-translation** from MSA to augment ~20k synthetic dialect sentences.
 5. **Scrape your domain** (e.g., service-marketplace logs, Twitter for your domain) → PII-scrub → manually review 200 samples.
-6. **Eval against MADAR-26 held-out** + your own 50-query Darija test set (see [jak-ma-eval-suite](https://github.com/Samielakkad/jak-ma-eval-suite)).
+6. **Eval against MADAR-26 held-out** + your own 50-query Darija test set (see [jak-ma-eval-suite](https://github.com/Samielakkad/ai-llm-evaluation-jakma)).
 
 This is roughly the path jak.ma used. Total time: ~2 months at part-time work. Total cost: ~$100 in cloud compute for the back-translation step.
 

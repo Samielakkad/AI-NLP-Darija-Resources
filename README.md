@@ -35,7 +35,7 @@ Latin-script Darija ("Arabizi") is ~30% of jak.ma's user-generated text. Resourc
 
 - Twitter-mined Arabizi datasets (search arxiv for "Arabizi" + year)
 - Tunisian Arabizi corpora (TUNIZI) — closest analog
-- Hand-curated jak.ma worker descriptions (sample dataset in [jak-ma-eval-suite](https://github.com/Samielakkad/jak-ma-eval-suite))
+- Hand-curated jak.ma worker descriptions (sample dataset in [jak-ma-eval-suite](https://github.com/Samielakkad/ai-llm-evaluation-jakma))
 
 ---
 
@@ -67,7 +67,7 @@ Latin-script Darija ("Arabizi") is ~30% of jak.ma's user-generated text. Resourc
 
 ### Fine-tuning infrastructure
 
-- **Hugging Face PEFT (LoRA)** — what we use in the [jak-ma-eval-suite](https://github.com/Samielakkad/jak-ma-eval-suite) fine-tune scaffolding.
+- **Hugging Face PEFT (LoRA)** — what we use in the [jak-ma-eval-suite](https://github.com/Samielakkad/ai-llm-evaluation-jakma) fine-tune scaffolding.
 - **Modal / RunPod / Vast.ai** — affordable single-A100 hosts for one-off LoRA runs.
 
 ---
@@ -80,7 +80,7 @@ Latin-script Darija ("Arabizi") is ~30% of jak.ma's user-generated text. Resourc
 
 ### jak.ma-specific (open-sourced)
 
-The 50-prompt held-out test set for jak.ma's grounded retrieval is in [jak-ma-eval-suite/DARIJA_QUERY_SET.md](https://github.com/Samielakkad/jak-ma-eval-suite/blob/main/DARIJA_QUERY_SET.md). Production-validated, scores ≥0.92 aggregate as of May 2026.
+The 50-prompt held-out test set for jak.ma's grounded retrieval is in [jak-ma-eval-suite/DARIJA_QUERY_SET.md](https://github.com/Samielakkad/ai-llm-evaluation-jakma/blob/main/DARIJA_QUERY_SET.md). Production-validated, scores ≥0.92 aggregate as of May 2026.
 
 ---
 
@@ -90,7 +90,7 @@ If you're starting fresh, here's the gap that will hurt you:
 
 1. **High-quality Arabizi parallel data.** Mostly community-mined, mostly Tunisian. Build your own from your domain.
 2. **Trade-specific or domain-specific vocabularies.** Generic Darija corpora won't have بلومبي (plumber), كلامبيستري (tiler), حدادة (welder) in useful frequencies.
-3. **Calibrated evaluators.** Most public Darija evaluation is one-shot human rating with no calibration protocol. Build your rubric early (see [ernie-evaluation-notes](https://github.com/Samielakkad/ernie-evaluation-notes) for methodology).
+3. **Calibrated evaluators.** Most public Darija evaluation is one-shot human rating with no calibration protocol. Build your rubric early (see [ernie-evaluation-notes](https://github.com/Samielakkad/ai-llm-evaluation-baidu-ernie) for methodology).
 4. **Pricing / numeric reasoning in Darija.** Almost none. Sami's deterministic rule engine in jak.ma is one of the few production-validated solutions.
 
 ---
@@ -106,8 +106,8 @@ For sensitive issues (corpus licensing concerns, PII), email `sam25@mails.tsingh
 ## Related
 
 - [jak.ma](https://jak.ma) — live Darija marketplace, 1,996 verified workers
-- [jak-ma-eval-suite](https://github.com/Samielakkad/jak-ma-eval-suite) — production grounded-retrieval eval methodology
-- [ernie-evaluation-notes](https://github.com/Samielakkad/ernie-evaluation-notes) — LLM eval methodology from Baidu ERNIE Mentor Program
+- [jak-ma-eval-suite](https://github.com/Samielakkad/ai-llm-evaluation-jakma) — production grounded-retrieval eval methodology
+- [ernie-evaluation-notes](https://github.com/Samielakkad/ai-llm-evaluation-baidu-ernie) — LLM eval methodology from Baidu ERNIE Mentor Program
 
 ## License
 
